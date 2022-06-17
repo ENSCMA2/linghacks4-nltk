@@ -39,7 +39,6 @@ print('synsets in which car is a lemma: ' +  repr(wn.lemmas('car')))
 motorcar = wn.synset('car.n.01')
 types_of_motorcar = motorcar.hyponyms()
 print('types of motorcars: ' + repr(types_of_motorcar))
-print('types of motorcars (all words): ' + repr(sorted([lemma.name() for synset in types_of_motorcar for lemma in synset.lemmas()])))
 
 # Hypernyms
 print('motorcar hypernyms: ' + repr(motorcar.hypernyms()))
@@ -60,16 +59,6 @@ print('materials in a tree: ' + repr(tree_ingredients))
 # Member Holonyms
 tree_groups = tree.member_holonyms()
 print('tree holonyms: ' + repr(tree_groups))
-
-# Entailments
-walk = wn.synset('walk.v.01')
-walk_entail = walk.entailments()
-print('what walking entails: ' + repr(walk_entail))
-
-# Antonyms
-supply = wn.lemma('supply.n.02.supply')
-not_supply = supply.antonyms()
-print('antonyms of supply: ' + repr(not_supply))
 
 # Paths
 right = wn.synset('right_whale.n.01')
